@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Diya Interiors | Dream. Design. Live.</title>
+<meta name="description" content="Diya Interiors, Arisipalayam, Salem. Modular kitchens, wardrobes, TV units, pooja units and complete interior works. Book a free site visit.">
+<style>
+  :root{
+    --navy:#0f2142;
+    --navy-2:#162c55;
+    --navy-deep:#0a1630;
+    --gold:#c9962e;
+    --gold-light:#e6c36f;
+    --gold-dark:#9a7220;
+    --cream:#f6f1e4;
+    --ivory:#fffdf7;
+    --grey:#b9c0d0;
+    --line:rgba(201,150,46,.32);
+    --serif:"Iowan Old Style","Palatino Linotype","Book Antiqua",Georgia,serif;
+    --sans:"Segoe UI",-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;scroll-padding-top:80px;}
+  body{background:var(--navy-deep);color:var(--cream);font-family:var(--sans);line-height:1.6;overflow-x:hidden;}
+  img{max-width:100%;display:block;}
+  a{color:inherit;text-decoration:none;}
+  ::selection{background:var(--gold);color:var(--navy-deep);}
+  :focus-visible{outline:2px solid var(--gold-light);outline-offset:2px;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 28px;}
+  h1,h2,h3{font-family:var(--serif);font-weight:400;color:var(--ivory);}
+  .eyebrow{font-family:var(--serif);font-style:italic;color:var(--gold-light);font-size:1rem;}
+
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:15px 32px;background:var(--gold);color:var(--navy-deep);font-weight:600;font-size:.96rem;border:1px solid var(--gold);border-radius:2px;cursor:pointer;font-family:var(--sans);transition:background .25s,color .25s,transform .2s;}
+  .btn:hover{background:transparent;color:var(--gold-light);transform:translateY(-2px);}
+  .btn-outline{background:transparent;color:var(--gold-dark);border-color:var(--gold-dark);}
+  .btn-outline:hover{background:var(--gold-dark);color:#fff;}
+
+  /* header */
+  header.site-header{position:sticky;top:0;z-index:60;background:#fff;border-bottom:1px solid var(--line);}
+  nav.wrap{display:flex;align-items:center;justify-content:space-between;padding-top:10px;padding-bottom:10px;gap:16px;}
+  .brand{display:flex;align-items:center;gap:12px;}
+  .brand img{height:54px;width:auto;}
+  .nav-links{display:flex;gap:30px;}
+  .nav-links a{font-size:.88rem;color:#3b4560;transition:color .2s;}
+  .nav-links a:hover{color:var(--gold-dark);}
+  .nav-cta{display:flex;align-items:center;gap:14px;}
+  .nav-cta .btn{padding:11px 22px;font-size:.85rem;}
+  .nav-cta .phone{font-size:.85rem;font-weight:600;color:var(--gold-dark);}
+  .menu-toggle{display:none;background:none;border:none;color:var(--navy);font-size:1.6rem;cursor:pointer;}
+  @media (max-width:900px){
+    .nav-links{display:none;}
+    .menu-toggle{display:block;}
+    .nav-cta .btn-outline,.nav-cta .phone{display:none;}
+  }
+
+  /* hero + booking */
+  .hero{position:relative;padding:64px 0 56px;background:radial-gradient(ellipse at 15% 0%,rgba(201,150,46,.16),transparent 55%),linear-gradient(180deg,var(--navy-deep),var(--navy) 100%);overflow:hidden;}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:start;}
+  @media (max-width:980px){.hero-grid{grid-template-columns:1fr;}}
+  .hero h1{font-size:clamp(2.1rem,4.2vw,3.3rem);line-height:1.15;margin:16px 0 20px;color:var(--gold-light);}
+  .hero .lead{color:var(--grey);font-size:1.05rem;max-width:520px;margin-bottom:28px;}
+  .hero-logo{width:min(260px,70%);border-radius:4px;margin-top:34px;}
+  .hero-badges{display:flex;gap:28px;margin-top:34px;flex-wrap:wrap;}
+  .hero-badges div{border-left:2px solid var(--gold);padding-left:14px;}
+  .hero-badges strong{display:block;font-family:var(--serif);font-weight:400;font-size:1.25rem;color:var(--gold-light);}
+  .hero-badges span{font-size:.78rem;color:var(--grey);}
+
+  .book-card{background:linear-gradient(180deg,var(--navy-2),var(--navy));border:1px solid var(--line);border-radius:6px;padding:34px 30px 28px;box-shadow:0 30px 60px -20px rgba(0,0,0,.6);position:relative;}
+  .book-card:before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--gold),transparent);}
+  .book-card h3{font-size:1.35rem;margin-bottom:4px;}
+  .book-card .sub{color:var(--grey);font-size:.85rem;margin-bottom:22px;}
+  .field{margin-bottom:16px;}
+  .field label{display:block;font-size:.78rem;color:var(--gold-light);margin-bottom:7px;}
+  .field label .hint{color:var(--grey);}
+  .field input,.field textarea{width:100%;background:rgba(0,0,0,.28);border:1px solid var(--line);color:var(--ivory);padding:12px 13px;font-size:.92rem;border-radius:2px;font-family:var(--sans);transition:border-color .2s,box-shadow .2s;}
+  .field input:focus,.field textarea:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(201,150,46,.18);}
+  .field input[type=date]{color-scheme:dark;}
+  .field textarea{resize:vertical;min-height:70px;}
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  @media (max-width:480px){.row2{grid-template-columns:1fr;}}
+  .book-card .btn{width:100%;margin-top:6px;padding:15px;font-size:1rem;}
+  .form-note{font-size:.76rem;color:var(--grey);margin-top:12px;text-align:center;}
+  .form-note a{color:var(--gold-light);}
+
+  .multiselect{position:relative;}
+  .ms-toggle{width:100%;display:flex;align-items:center;justify-content:space-between;gap:10px;background:rgba(0,0,0,.28);border:1px solid var(--line);color:var(--ivory);padding:12px 13px;font-size:.92rem;border-radius:2px;font-family:var(--sans);cursor:pointer;text-align:left;}
+  .ms-toggle .count{color:var(--grey);font-size:.8rem;margin-left:auto;}
+  .ms-toggle:after{content:"\25BE";color:var(--gold-light);}
+  .ms-toggle.open{border-color:var(--gold);box-shadow:0 0 0 3px rgba(201,150,46,.18);}
+  .ms-menu{display:none;position:absolute;left:0;right:0;top:calc(100% + 6px);z-index:30;background:var(--navy-2);border:1px solid var(--line);border-radius:4px;max-height:250px;overflow-y:auto;padding:8px;box-shadow:0 22px 44px -14px rgba(0,0,0,.7);}
+  .ms-menu.open{display:block;}
+  .ms-option{display:flex;align-items:center;gap:10px;padding:9px 8px;font-size:.88rem;color:var(--cream);border-radius:3px;cursor:pointer;}
+  .ms-option:hover{background:rgba(201,150,46,.12);}
+  .ms-option input{accent-color:var(--gold);width:16px;height:16px;cursor:pointer;}
+  .ms-error{display:none;color:#f0a39c;font-size:.74rem;margin-top:7px;}
+  .ms-error.show{display:block;}
+
+  /* gallery */
+  section{padding:64px 0;}
+  .gallery{background:var(--navy);}
+  .section-head{max-width:640px;margin:0 auto 36px;text-align:center;}
+  .section-head h2{font-size:clamp(1.7rem,3vw,2.5rem);margin-top:10px;}
+  .gal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+  @media (max-width:900px){.gal-grid{grid-template-columns:repeat(2,1fr);}}
+  @media (max-width:520px){.gal-grid{grid-template-columns:1fr;}}
+  .gal-item{position:relative;aspect-ratio:4/3;overflow:hidden;border:1px solid var(--line);background:var(--navy-2);cursor:zoom-in;padding:0;display:block;width:100%;}
+  .gal-item img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease;}
+  .gal-item:hover img{transform:scale(1.05);}
+  .lightbox{position:fixed;inset:0;z-index:120;background:rgba(5,10,24,.94);display:none;align-items:center;justify-content:center;padding:24px;cursor:zoom-out;}
+  .lightbox.open{display:flex;}
+  .lightbox img{max-height:92vh;max-width:100%;object-fit:contain;}
+
+  /* CTA */
+  .cta-strip{background:linear-gradient(90deg,var(--gold-dark),var(--gold));color:var(--navy-deep);padding:50px 0;}
+  .cta-strip .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:22px;}
+  .cta-strip h3{color:var(--navy-deep);font-size:1.5rem;}
+  .cta-strip p{color:rgba(10,22,48,.78);margin-top:4px;}
+  .cta-strip .btn{background:var(--navy-deep);color:var(--gold-light);border-color:var(--navy-deep);}
+  .cta-strip .btn:hover{background:transparent;color:var(--navy-deep);}
+
+  /* contact */
+  .contact{background:var(--navy-deep);}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;}
+  @media (max-width:900px){.contact-grid{grid-template-columns:1fr;gap:40px;}}
+  .contact h2{font-size:clamp(1.6rem,2.6vw,2.1rem);margin:10px 0 26px;}
+  .info-row{display:flex;gap:16px;padding:18px 0;border-bottom:1px solid var(--line);}
+  .info-row:first-of-type{padding-top:0;}
+  .info-row:last-child{border-bottom:none;}
+  .info-ic{width:38px;height:38px;flex:none;border:1px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--gold-light);}
+  .info-ic svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;}
+  .info-row h4{font-size:.92rem;color:var(--ivory);margin-bottom:4px;font-weight:600;}
+  .info-row p,.info-row a{font-size:.9rem;color:var(--grey);overflow-wrap:anywhere;}
+  .info-row a:hover{color:var(--gold-light);}
+  .map-frame{border:1px solid var(--line);border-radius:4px;overflow:hidden;height:100%;min-height:340px;}
+  .map-frame iframe{width:100%;height:100%;min-height:340px;border:0;}
+
+  /* footer */
+  footer{background:#fff;border-top:1px solid var(--line);padding:36px 0 22px;}
+  .foot-grid{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;padding-bottom:22px;border-bottom:1px solid var(--line);}
+  .foot-grid img{height:56px;}
+  .foot-links{display:flex;gap:26px;flex-wrap:wrap;}
+  .foot-links a{font-size:.85rem;color:#3b4560;}
+  .foot-links a:hover{color:var(--gold-dark);}
+  .foot-bottom{display:flex;justify-content:space-between;padding-top:20px;flex-wrap:wrap;gap:10px;font-size:.78rem;color:#3b4560;}
+  .foot-bottom a{color:var(--gold-dark);}
+
+  .wa-float{position:fixed;right:22px;bottom:22px;z-index:70;width:58px;height:58px;border-radius:50%;background:var(--gold);color:var(--navy-deep);display:flex;align-items:center;justify-content:center;box-shadow:0 10px 26px -6px rgba(201,150,46,.6);}
+  .toast{position:fixed;left:50%;bottom:30px;transform:translate(-50%,20px);background:var(--gold);color:var(--navy-deep);padding:14px 26px;border-radius:4px;font-size:.9rem;font-weight:600;opacity:0;pointer-events:none;transition:opacity .35s,transform .35s;z-index:130;}
+  .toast.show{opacity:1;transform:translate(-50%,0);}
+  @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important;}}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="wrap">
+    <a class="brand" href="#book"><img src="images/logo.jpeg" alt="Diya Interiors - Dream. Design. Live."></a>
+    <div class="nav-links">
+      <a href="#book">Book a Visit</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="nav-cta">
+      <a class="phone" href="tel:+916383697974">63836 97974</a>
+      <a class="btn btn-outline" href="tel:+916383697974">Call Now</a>
+      <a class="btn" href="#book">Book Now</a>
+    </div>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open menu">&#9776;</button>
+  </nav>
+</header>
+
+<section class="hero" id="book">
+  <div class="wrap hero-grid">
+    <div>
+      <h1>Modular Kitchens | Wardrobes | TV &amp; Pooja Units</h1>
+      <p class="lead">Dream. Design. Live. Complete interior solutions for your home in Salem.</p>
+      <div class="hero-badges">
+        <div><strong>Free</strong><span>Site visit &amp; measurement</span></div>
+        <div><strong>Custom</strong><span>Designs made for your space</span></div>
+        <div><strong>Salem</strong><span>Arisipalayam workshop</span></div>
+      </div>
+    </div>
+
+    <div class="book-card">
+      <h3>Book a Free Site Visit</h3>
+      <p class="sub">Fill in your details and we'll confirm on WhatsApp.</p>
+      <form id="bookingForm">
+        <div class="row2">
+          <div class="field">
+            <label for="fname">Full Name *</label>
+            <input type="text" id="fname" required placeholder="Your name">
+          </div>
+          <div class="field">
+            <label for="fphone">Phone Number *</label>
+            <input type="tel" id="fphone" required placeholder="10-digit mobile number" pattern="[0-9+ ]{8,15}">
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="msToggle">Service Required * <span class="hint">(choose one or more)</span></label>
+          <div class="multiselect" id="serviceMultiselect">
+            <button type="button" class="ms-toggle" id="msToggle"><span class="label">Select service(s)</span><span class="count"></span></button>
+            <div class="ms-menu" id="msMenu">
+              <label class="ms-option"><input type="checkbox" value="Modular Kitchen"> Modular Kitchen</label>
+              <label class="ms-option"><input type="checkbox" value="Modular Wardrobe"> Modular Wardrobe</label>
+              <label class="ms-option"><input type="checkbox" value="TV Unit"> TV Unit</label>
+              <label class="ms-option"><input type="checkbox" value="Pooja Unit"> Pooja Unit</label>
+              <label class="ms-option"><input type="checkbox" value="Kids Room &amp; Study Units"> Kids Room &amp; Study Units</label>
+              <label class="ms-option"><input type="checkbox" value="Full Home Interiors"> Full Home Interiors</label>
+              <label class="ms-option"><input type="checkbox" value="Other"> Other</label>
+            </div>
+          </div>
+          <p class="ms-error" id="msError">Please select at least one service.</p>
+        </div>
+
+        <div class="row2">
+          <div class="field">
+            <label for="faddress">Location / Area *</label>
+            <input type="text" id="faddress" required placeholder="Your city or area">
+          </div>
+          <div class="field">
+            <label for="fdate">Preferred Visit Date</label>
+            <input type="date" id="fdate">
+          </div>
+        </div>
+        <div class="field">
+          <label for="fmsg">Additional Details</label>
+          <textarea id="fmsg" placeholder="Tell us about your space, size, or preferred date..."></textarea>
+        </div>
+        <button type="submit" class="btn">Book Now via WhatsApp</button>
+      </form>
+      <p class="form-note">Or call us directly at <a href="tel:+916383697974">63836 97974</a></p>
+    </div>
+  </div>
+</section>
+
+<section id="gallery" class="gallery">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Our Work</span>
+      <h2>Recent interiors</h2>
+    </div>
+    <div class="gal-grid">
+      <button class="gal-item" type="button" aria-label="View photo 1"><img src="images/gallery-1.jpg" alt="TV unit with pooja cabinet" loading="lazy"></button>
+      <button class="gal-item" type="button" aria-label="View photo 2"><img src="images/gallery-2.jpg" alt="Kitchen with pooja unit" loading="lazy"></button>
+      <button class="gal-item" type="button" aria-label="View photo 3"><img src="images/gallery-3.jpg" alt="Kids room study units" loading="lazy"></button>
+      <button class="gal-item" type="button" aria-label="View photo 4"><img src="images/gallery-4.jpg" alt="Modular kitchen with fluted glass shutters" loading="lazy"></button>
+      <button class="gal-item" type="button" aria-label="View photo 5"><img src="images/gallery-5.jpg" alt="Kitchen corner pull-out storage" loading="lazy"></button>
+      <button class="gal-item" type="button" aria-label="View photo 6"><img src="images/gallery-6.jpg" alt="Modular kitchen with wooden finish" loading="lazy"></button>
+    </div>
+  </div>
+</section>
+
+<div class="cta-strip">
+  <div class="wrap">
+    <div>
+      <h3>Ready to plan your interiors?</h3>
+      <p>Speak to us today. Site visits are free.</p>
+    </div>
+    <a class="btn" href="https://wa.me/916383697974?text=Hi%20Diya%20Interiors%2C%20I%27d%20like%20to%20enquire%20about%20your%20services." target="_blank" rel="noopener">Chat on WhatsApp</a>
+  </div>
+</div>
+
+<section id="contact" class="contact">
+  <div class="wrap contact-grid">
+    <div>
+      <span class="eyebrow">Get In Touch</span>
+      <h2>Visit or call us</h2>
+
+      <div class="info-row">
+        <div class="info-ic"><svg viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></div>
+        <div><h4>Address</h4><p>62, Rajakannu Street, Near St. Mary's Public School, Arisipalayam, Salem 636 009</p></div>
+      </div>
+      <div class="info-row">
+        <div class="info-ic"><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg></div>
+        <div><h4>Phone</h4><a href="tel:+916383697974">63836 97974</a></div>
+      </div>
+      <div class="info-row">
+        <div class="info-ic"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></div>
+        <div><h4>Email</h4><a href="mailto:diyainteriors26@gmail.com">diyainteriors26@gmail.com</a></div>
+      </div>
+      <div class="info-row">
+        <div class="info-ic"><svg viewBox="0 0 24 24"><path d="M21 12a8.5 8.5 0 0 1-12.4 7.5L3 21l1.6-5.4A8.5 8.5 0 1 1 21 12z"/></svg></div>
+        <div><h4>WhatsApp</h4><a href="https://wa.me/916383697974" target="_blank" rel="noopener">Message us on WhatsApp</a></div>
+      </div>
+    </div>
+
+    <div>
+      <div class="map-frame">
+        <iframe loading="lazy" title="Diya Interiors on Google Maps" src="https://www.google.com/maps?q=11.662211,78.1417841+(Diya+Interiors)&amp;z=16&amp;output=embed"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <img src="images/logo.jpeg" alt="Diya Interiors">
+      <div class="foot-links">
+        <a href="#book">Book a Visit</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>&copy; <span id="year"></span> Diya Interiors. All rights reserved.</span>
+      <span>Call <a href="tel:+916383697974">63836 97974</a></span>
+    </div>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/916383697974?text=Hi%20Diya%20Interiors%2C%20I%27d%20like%20to%20enquire%20about%20your%20services." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.6-2.1-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.1.2-.3.3-.4.1-.2 0-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.5-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.3-.1-.2-.3-.2-.6-.4z"/><path d="M12 2C6.5 2 2 6.5 2 12c0 1.9.5 3.7 1.5 5.2L2 22l4.9-1.3c1.5.8 3.2 1.3 5.1 1.3 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18.3c-1.7 0-3.4-.5-4.8-1.3l-.3-.2-3.3.9.9-3.2-.2-.3C3.5 14.7 3 13 3 12c0-5 4-9 9-9s9 4 9 9-4 9-9 9z"/></svg>
+</a>
+
+<div class="lightbox" id="lightbox"><img alt=""></div>
+<div class="toast" id="toast">Opening WhatsApp&hellip;</div>
+
+<script>
+  const WA = "916383697974";
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // mobile menu
+  const toggle = document.getElementById('menuToggle');
+  const links = document.querySelector('.nav-links');
+  toggle.addEventListener('click', ()=>{
+    const open = links.style.display === 'flex';
+    if(open){ links.removeAttribute('style'); return; }
+    Object.assign(links.style,{display:'flex',position:'absolute',top:'100%',left:'0',right:'0',flexDirection:'column',background:'#fff',padding:'18px 28px',borderBottom:'1px solid rgba(201,150,46,.4)',gap:'16px'});
+  });
+  links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>links.removeAttribute('style')));
+
+  // min date = today
+  const dateInput = document.getElementById('fdate');
+  const t = new Date();
+  dateInput.min = t.getFullYear()+'-'+String(t.getMonth()+1).padStart(2,'0')+'-'+String(t.getDate()).padStart(2,'0');
+
+  // multi-select
+  const msToggle = document.getElementById('msToggle');
+  const msMenu = document.getElementById('msMenu');
+  const msError = document.getElementById('msError');
+  const boxes = Array.from(msMenu.querySelectorAll('input'));
+  const selected = ()=>boxes.filter(b=>b.checked).map(b=>b.value);
+  function refresh(){
+    const s = selected();
+    const label = msToggle.querySelector('.label'), count = msToggle.querySelector('.count');
+    if(!s.length){ label.textContent='Select service(s)'; count.textContent=''; }
+    else if(s.length<=2){ label.textContent=s.join(', '); count.textContent=''; }
+    else { label.textContent=s[0]+' + more'; count.textContent=s.length+' selected'; }
+    if(s.length) msError.classList.remove('show');
+  }
+  msToggle.addEventListener('click',e=>{
+    e.stopPropagation();
+    msToggle.classList.toggle('open', msMenu.classList.toggle('open'));
+  });
+  boxes.forEach(b=>b.addEventListener('change',refresh));
+  document.addEventListener('click',e=>{
+    if(!document.getElementById('serviceMultiselect').contains(e.target)){
+      msMenu.classList.remove('open'); msToggle.classList.remove('open');
+    }
+  });
+
+  // booking -> WhatsApp
+  document.getElementById('bookingForm').addEventListener('submit',function(e){
+    e.preventDefault();
+    const name = document.getElementById('fname').value.trim();
+    const phone = document.getElementById('fphone').value.trim();
+    const address = document.getElementById('faddress').value.trim();
+    const date = dateInput.value;
+    const msg = document.getElementById('fmsg').value.trim();
+    const services = selected();
+    if(!services.length){
+      msError.classList.add('show');
+      msMenu.classList.add('open'); msToggle.classList.add('open');
+      msToggle.scrollIntoView({behavior:'smooth',block:'center'});
+      return;
+    }
+    let text = "Hi Diya Interiors, I'd like to book a site visit.\n\n";
+    text += "Name: "+name+"\nPhone: "+phone+"\nServices: "+services.join(', ')+"\nLocation: "+address+"\n";
+    if(date) text += "Preferred Date: "+date+"\n";
+    if(msg) text += "Details: "+msg+"\n";
+    const toast = document.getElementById('toast');
+    toast.classList.add('show');
+    setTimeout(()=>toast.classList.remove('show'),2500);
+    setTimeout(()=>window.open("https://wa.me/"+WA+"?text="+encodeURIComponent(text),'_blank'),400);
+  });
+
+  // gallery lightbox
+  const lb = document.getElementById('lightbox'), lbImg = lb.querySelector('img');
+  document.querySelectorAll('.gal-item').forEach(b=>b.addEventListener('click',()=>{
+    const img = b.querySelector('img'); lbImg.src = img.src; lbImg.alt = img.alt; lb.classList.add('open');
+  }));
+  lb.addEventListener('click',()=>lb.classList.remove('open'));
+  document.addEventListener('keydown',e=>{ if(e.key==='Escape') lb.classList.remove('open'); });
+</script>
+</body>
+</html>
